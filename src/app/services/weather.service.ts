@@ -11,7 +11,7 @@ export class WeatherService {
 
   public cityName;
   private apiKey;
-  private url = "http://api.openweathermap.org/data/2.5/weather?q=" + this.cityName + "&units=metric&appid=" + this.apiKey;
+
 
   public setCity(value) {
     this.cityName = value;

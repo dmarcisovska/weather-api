@@ -20,7 +20,7 @@ export class WeatherComponent implements OnInit {
   sendValueIntoService(cityName: string) {
 
     this.weatherService.setCity(cityName);
-    let url = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + this.apiKey;
+    let url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + this.apiKey;
 
     this.weatherService.getWeather(url)
       .subscribe(data => this.weatherModel = data);
