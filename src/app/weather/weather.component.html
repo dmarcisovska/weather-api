@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <form class="form-inline justify-content-center mb-3" (submit)="sendValueIntoService(cityName)">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="cityNAme" class="sr-only">Enter City Name</label>
+        <input ngModel [(ngModel)]="cityName"  name="cityName" type="text" class="form-control" id="cityName"  placeholder="Enter City Name" [ngModelOptions]="{standalone: true}"  >
+      </div>
+      <button type="submit" class="btn btn-info mb-2">Search City Weather</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+
+      <div *ngIf="show" class="card text-center">
+        <div class="card-header">
+          <h3> {{weatherModel.name}}</h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Current Conditions</h5>
+          <img src="http://openweathermap.org/img/w/{{weatherModel.weather[0].icon}}.png" alt={{weatherModel.weather[0].icon}}  >
+          <p class="card-text">{{weatherModel.weather[0].main}}</p>
+
+          <hr>
+
+          <h5 class="card-title">Current Temperature</h5>
+          <p class="card-text">{{weatherModel.main.temp}}&#176;F </p>
+          <hr>
+          <h5 class="card-title">Temperature Low</h5>
+          <p class=" card-text">{{weatherModel.main.temp_min}}&#176;F </p>
+          <hr>
+          <h5 class="card-title">Temperature High</h5>
+          <p class="card-text">{{weatherModel.main.temp_max}}&#176;F </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
